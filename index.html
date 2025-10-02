@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fullscreen Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Camera -->
+  <div id="camera-container">
+    <video id="webcam" autoplay playsinline muted></video>
+    <div id="cam-status">Camera: off</div>
+  </div>
+
+  <!-- Registration -->
+  <div id="registration" class="panel">
+    <h1>Welcome</h1>
+    <div class="field"><label>Name</label><input id="userName" type="text" /></div>
+    <div class="field"><label>Email</label><input id="userEmail" type="email" /></div>
+    <div class="field"><label>Registered Number</label><input id="userRegNo" type="text" /></div>
+    <button id="startBtn" class="primary">Start Quiz (Fullscreen)</button>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz-container" class="panel" style="display:none;">
+    <div class="quiz-header">
+      <h1>Quiz</h1>
+      <div class="timers">
+        <div>Total Left: <span id="totalTime">20:00</span></div>
+        <div>Question Left: <span id="qTime">02:00</span></div>
+      </div>
+    </div>
+
+    <div id="progressline"><div id="progress-fill"></div></div>
+    <div id="question-nav" class="qnav"></div>
+    <div id="question-area"></div>
+
+    <div class="controls">
+      <button id="prevBtn">Previous</button>
+      <button id="markBtn">Mark for Review</button>
+      <button id="nextBtn">Next</button>
+      <button id="submitBtn" class="danger">Submit Quiz</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="results-container" class="panel" style="display:none;">
+    <h1>Results</h1>
+    <div id="summary"></div>
+    <div id="review-list"></div>
+    <div class="controls">
+      <button id="downloadCert">Download Certificate</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+  </div>
+
+  <script src="camera.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
